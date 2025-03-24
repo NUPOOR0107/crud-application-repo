@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.9  # Use a compatible Python version
+      python: 3.9  # Adjust if necessary
     commands:
       - echo "Installing dependencies..."
       - pip install -r requirements.txt -t package/
@@ -11,8 +11,9 @@ phases:
   build:
     commands:
       - echo "Packaging application..."
-      - cp -r package/* .  # Copy installed packages to the working directory
-      - zip -r banking_crud.zip .  # Create a deployment package
+      - cp -r package/* .  # Copy installed dependencies
+      - mkdir -p output  # Ensure output directory exists
+      - zip -r output/banking_crud.zip .  # Package all files
 
   post_build:
     commands:
@@ -20,6 +21,7 @@ phases:
 
 artifacts:
   files:
-    - banking_crud.zip  # Deployment package
-    - appspec.yml       # CodeDeploy configuration
-    - scripts/**        # Deployment scripts
+    - output/banking_crud.zip  # Ensure correct path
+    - appspec.yml
+    - scripts/**   # Include deployment scripts
+  discard-paths: yes
