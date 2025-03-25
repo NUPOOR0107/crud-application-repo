@@ -2,8 +2,8 @@
 set -e  # Exit immediately if a command exits with a non-zero status
 
 echo "Installing dependencies..."
-# mkdir -p /home/ec2-user/banking_crud
-# cd /home/ec2-user/banking_crud
+# if  mkdir -p /home/ec2-user/banking_crud
+cd /home/ec2-user/banking_crud
 
 python3 --version
 
