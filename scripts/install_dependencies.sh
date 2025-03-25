@@ -12,6 +12,6 @@ curl -O https://bootstrap.pypa.io/get-pip.py
 python3 get-pip.py
 
 # Install Python dependencies
-pip3 install --no-cache-dir -r requirements.txt
+pip3 install --no-cache-dir -r /requirements.txt
 
 echo "Dependencies installed successfully."
