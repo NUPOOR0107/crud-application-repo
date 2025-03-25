@@ -1,10 +1,10 @@
 version: 0.0
 os: linux
 files:
-  - source: requirements.txt
+  - source: /
     destination: /home/ec2-user/banking_crud
 hooks:
-  BeforeInstall:
+  AfterInstall:
     - location: install_dependencies.sh
       timeout: 300
   ApplicationStart:
