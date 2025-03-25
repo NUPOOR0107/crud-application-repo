@@ -13,7 +13,7 @@ phases:
       - zip -r banking_crud.zip * -x appspec.yml  # Exclude appspec.yml from ZIP
   post_build:
     commands:
-      - echo "Build complete. Uploading artifacts..."
+      - echo "Build complete. Uploading artifacts...."
 
 artifacts:
   files:
