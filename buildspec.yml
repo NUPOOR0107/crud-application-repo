@@ -7,10 +7,12 @@ phases:
     commands:
       - echo "Installing dependencies..."
       - pip install -r requirements.txt
+
   build:
     commands:
       - echo "Zipping the deployment package..."
-      - zip -r banking_crud.zip *  # Zip all files
+      - zip -r banking_crud.zip . -x "appspec.yml"  # Exclude appspec.yml
+
   post_build:
     commands:
       - echo "Build complete. Uploading artifacts..."
@@ -18,5 +20,6 @@ phases:
 artifacts:
   files:
     - banking_crud.zip
-    - appspec.yml
+    - appspec.yml   # Ensure this remains outside the ZIP
+    - scripts/**    # If you have scripts for deployment, include them
   discard-paths: yes
