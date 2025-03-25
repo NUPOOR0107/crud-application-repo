@@ -9,9 +9,13 @@ phases:
       - pip install -r requirements.txt
   build:
     commands:
-      - echo "Zipping Application..."
-      - zip -r banking_crud.zip .   # Ensure this matches artifact paths
+      - echo "Zipping the deployment package..."
+      - zip -r banking_crud.zip *  # Zip all files
+  post_build:
+    commands:
+      - echo "Build complete. Uploading artifacts..."
+
 artifacts:
   files:
-    - banking_crud.zip    # Ensure this matches the name in `build` phase
+    - banking_crud.zip
   discard-paths: yes
