@@ -16,10 +16,15 @@ if [ $? -ne 0 ]; then
     echo "Failed to retrieve secret from AWS Secrets Manager."
     exit 1
 fi
-export DB_PASSWORD=$(echo "$DB_PASSWORD_JSON" | jq -r '.DB_PASSWORD')
+export DB_PASSWORD=$(echo "$DB_PASSWORD_JSON" | jq -r '.password')
 
 # Stop any existing Gunicorn service
 pkill -f gunicorn || true
+
+# Activate virtual environment if exists
+if [ -d "venv" ]; then
+    source venv/bin/activate
+fi
 
 # Ensure dependencies are installed before starting the app
 pip3 install --no-cache-dir -r requirements.txt
