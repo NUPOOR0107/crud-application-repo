@@ -18,6 +18,5 @@ phases:
 artifacts:
   files:
     - banking_crud.zip
-    - appspec.yml  # Ensure this is outside the ZIP
-    - scripts/**/*
+    - **/*
   discard-paths: yes
