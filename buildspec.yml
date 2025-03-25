@@ -19,5 +19,5 @@ artifacts:
   files:
     - banking_crud.zip
     - appspec.yml  # Ensure this is outside the ZIP
-    - scripts/*
+    - scripts/**/*
   discard-paths: yes
