@@ -9,7 +9,7 @@ phases:
       - pip install -r requirements.txt
   build:
     commands:
-      - echo "Zipping application..."
+      - echo "Zipping Application..."
       - zip -r banking_crud.zip .   # Ensure this matches artifact paths
 artifacts:
   files:
