@@ -9,7 +9,7 @@ phases:
       - pip install -r requirements.txt
   build:
     commands:
-      - echo "Zipping the deployment package..."
+      - echo "Zipping the deployment package...."
       - zip -r banking_crud.zip * -x appspec.yml  # Exclude appspec.yml from ZIP
   post_build:
     commands:
