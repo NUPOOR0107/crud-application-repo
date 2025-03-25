@@ -7,7 +7,7 @@ echo "Installing dependencies..."
 cd /home/ec2-user/banking_crud
 
 # Unzip the application package
-echo "Extracting banking_crud.zip..."
+echo "Extracting banking_crud.zip...."
 unzip -o banking_crud.zip
 rm -f banking_crud.zip  # Remove the ZIP file after extraction
 
